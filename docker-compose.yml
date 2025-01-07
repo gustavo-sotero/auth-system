@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile
     container_name: auth-system
     ports:
-      - "3000:3000"
+      - "${PORT}:3000"
     environment:
       - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
       - DATABASE_URL=${DATABASE_URL}
