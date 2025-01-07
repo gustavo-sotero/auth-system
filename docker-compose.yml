@@ -23,8 +23,28 @@ services:
       - SMTP_PASS=${SMTP_PASS}
       - FROM_EMAIL=${FROM_EMAIL}
     restart: unless-stopped
+    depends_on:
+      - postgres
     networks:
       - auth-network
+
+  postgres:
+    image: postgres:alpine
+    container_name: auth-postgres
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - auth-network
+
+volumes:
+  postgres_data:
 
 networks:
   auth-network:
