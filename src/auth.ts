@@ -6,8 +6,12 @@ import { sendEmail } from './lib/email';
 const prisma = new PrismaClient();
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
-    provider: 'sqlite'
+    provider: 'postgresql'
   }),
+  trustedOrigins: [
+    process.env.NEXT_PUBLIC_APP_URL as string,
+    process.env.BETTER_AUTH_URL as string
+  ],
   emailAndPassword: {
     enabled: true,
     autoSignIn: false,
