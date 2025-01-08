@@ -13,14 +13,11 @@ RUN npm install
 # Copiar resto dos arquivos
 COPY . .
 
-# Gerar prisma client
-RUN npx prisma generate
-
 # Build da aplicação
-RUN npm run build
+RUN npm run deploy:build
 
 # Expor porta 3000
 EXPOSE 3000
 
 # Comando para iniciar a aplicação
-CMD ["sh", "-c", "npx prisma migrate dev && npm start"]
+CMD ["npm start"]

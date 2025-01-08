@@ -10,9 +10,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "deploy:build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "lint": "next lint",
-    "check": "biome check ./src"
+    "check": "biome check ./src",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
