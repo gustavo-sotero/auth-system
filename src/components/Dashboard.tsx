@@ -35,9 +35,9 @@ export function Dashboard({ session }: SessionProps) {
 
   const user = session.user;
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setIsLoggingOut(true);
-    authClient.signOut();
+    await authClient.signOut();
     setIsLoggingOut(false);
     redirect('/login');
   };
