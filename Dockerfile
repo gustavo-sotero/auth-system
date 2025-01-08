@@ -16,8 +16,5 @@ COPY . .
 # Build da aplicação
 RUN npm run deploy:build
 
-# Expor porta 3000
-EXPOSE 3000
-
 # Comando para iniciar a aplicação
 CMD ["npm", "start"]
