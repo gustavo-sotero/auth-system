@@ -17,4 +17,4 @@ COPY . .
 RUN npm run deploy:build
 
 # Comando para iniciar a aplicação
-CMD ["npm", "start"]
+CMD ["npm", "run", "deploy:start"]
