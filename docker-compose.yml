@@ -5,8 +5,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "${PORT}:3000"
     environment:
       - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
       - DATABASE_URL=${DATABASE_URL}
@@ -20,15 +18,3 @@ services:
       - SMTP_PASS=${SMTP_PASS}
       - FROM_EMAIL=${FROM_EMAIL}
     restart: unless-stopped
-    networks:
-      - auth-network
-      - dokploy-network
-
-volumes:
-  postgres_data:
-
-networks:
-  dokploy-network:
-    external: true
-  auth-network:
-    driver: bridge
