@@ -5,7 +5,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: auth-system
     ports:
       - "${PORT}:3000"
     environment:
@@ -23,21 +22,6 @@ services:
     restart: unless-stopped
     depends_on:
       - postgres
-    networks:
-      - auth-network
-
-  postgres:
-    image: postgres:alpine
-    container_name: auth-postgres
-    environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASS}
-      - POSTGRES_DB=${DB_NAME}
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    restart: unless-stopped
     networks:
       - auth-network
       - dokploy-network
