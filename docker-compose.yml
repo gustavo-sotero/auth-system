@@ -40,10 +40,13 @@ services:
     restart: unless-stopped
     networks:
       - auth-network
+      - dokploy-network
 
 volumes:
   postgres_data:
 
 networks:
+  dokploy-network:
+    external: true
   auth-network:
     driver: bridge
