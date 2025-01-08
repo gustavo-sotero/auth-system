@@ -20,8 +20,6 @@ services:
       - SMTP_PASS=${SMTP_PASS}
       - FROM_EMAIL=${FROM_EMAIL}
     restart: unless-stopped
-    depends_on:
-      - postgres
     networks:
       - auth-network
       - dokploy-network
