@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "next start",
     "deploy:build": "prisma generate && next build",
-    "deploy:start": "prisma db push --force-reset && next start",
+    "deploy:start": "prisma db push --accept-data-loss && next start",
     "lint": "next lint",
     "check": "biome check ./src"
   },
