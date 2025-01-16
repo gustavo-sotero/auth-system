@@ -69,6 +69,5 @@ model Verification {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
-  @@unique([identifier, value])
   @@map("verification")
 }
