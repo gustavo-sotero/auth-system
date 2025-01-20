@@ -15,7 +15,7 @@
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
-    "formatWithErrors": false,
+    "formatWithErrors": true,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
@@ -89,12 +89,10 @@
   },
   "javascript": {
     "formatter": {
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
       "trailingCommas": "none",
       "semicolons": "always",
       "arrowParentheses": "always",
-      "bracketSameLine": false,
+      "bracketSameLine": true,
       "quoteStyle": "single",
       "attributePosition": "auto",
       "bracketSpacing": true
